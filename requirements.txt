@@ -1,0 +1,13 @@
+ipython
+joblib
+jupyterlab
+matplotlib
+networkx
+numpy
+pandas
+RiskLabAI==3.2.0
+river
+scikit-learn
+scipy
+statsmodels
+torch
