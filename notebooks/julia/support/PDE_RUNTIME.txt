@@ -1,0 +1,17 @@
+CHAPTER 29 OPTIONAL MATH RUNTIME
+
+The book computes its released Float32 neural examples in Julia using an explicitly supplied, unmodified Intel oneMKL runtime. The Julia adapter retains the existing RiskLabAI BSD 3-Clause licence. Intel's runtime remains under the Intel Simplified Software License (October 2022):
+https://www.intel.com/content/www/us/en/content-details/749362/intel-simplified-software-license-version-october-2022.html
+
+No Intel binary is included in this book, modified by the adapter, downloaded automatically, or installed automatically. Supply a lawfully obtained runtime separately, retain its accompanying licence and third-party notices, and configure the active Julia environment's LocalPreferences.toml:
+
+[RiskLabAI]
+book_pde_mkl_library = 'path/to/mkl_rt.3.dll'
+
+Use an absolute library path, or a path relative to LocalPreferences.toml. On Linux, provide the corresponding runtime shared-library path. This configuration belongs to the local Julia environment and contains no change to the book's scientific inputs. Missing or incompatible runtimes produce an explicit error; the adapter does not silently fall back to a different arithmetic implementation.
+
+The strict reference validation uses oneMKL 2026.1 build 20260612, Float32 arithmetic and gradual underflow on the validated Windows x64 AVX2 machine. Cross-platform and cross-CPU bit equality is not claimed. The binding selects the documented LP64 and sequential interfaces through their APIs and requests high-accuracy VML arithmetic with ignored VML reporting on each individual vector call. It does not replace Julia's global BLAS, change PATH, mutate the process environment or change global VML mode. The existing public Float64 library interfaces are retained.
+
+The raw shared inputs are generated Brownian/Gaussian draws, unfitted initial parameter arrays and original control grids. Native calculations do not read fitted Python outputs or reference optimizer states. The separately labelled Python interface-status table contains recorded source observations only; live Julia interface outcomes are computed independently.
+
+All original equations, seeds, sample sizes, objectives, budgets, learning rates, estimands, model families and decision rules are retained. Constructor counts include the inactive modules counted by the source Python constructors. Times are measured independently and are not language-performance claims. Every existing scientific, source-baseline, default-environment and provenance hold remains unchanged by local integration.

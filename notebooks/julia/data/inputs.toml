@@ -1,0 +1,29 @@
+[datasets.binance_btcusdt]
+original = "data/public/binance/BTCUSDT-1m-2021-01.zip"
+original_sha256 = "9364a063efa0604d5b9d2536fb68f922da5afa3d8f94a26a527471a1e2f87801"
+native_input = "notebooks/julia/data/binance_btcusdt.csv"
+native_sha256 = "3858592fb2311d653b46b42cb3e949cba766ea45b9dbab6df41553613e91db6d"
+
+[datasets.fred_nasdaq]
+original = "data/public/fred/NASDAQCOM_1994-01-01_2025-12-31.csv"
+original_sha256 = "2e988948ffcb108da4902dfedaa5df756e7e102dc523a99a8916a0533291f2d7"
+native_input = "data/public/fred/NASDAQCOM_1994-01-01_2025-12-31.csv"
+native_sha256 = "2e988948ffcb108da4902dfedaa5df756e7e102dc523a99a8916a0533291f2d7"
+
+[datasets.fred_sp500]
+original = "data/public/fred/SP500_2014-01-02_2025-12-31.csv"
+original_sha256 = "2098b209ee3afdb3b2c1e783ac90a2bb7dd3865feb416d0fabedbb4a7a542754"
+native_input = "data/public/fred/SP500_2014-01-02_2025-12-31.csv"
+native_sha256 = "2098b209ee3afdb3b2c1e783ac90a2bb7dd3865feb416d0fabedbb4a7a542754"
+
+[datasets.french_49_industries]
+original = "data/public/ken_french/49_Industry_Portfolios_daily_CSV.zip"
+original_sha256 = "8f394fe34bea54d41b9aafed410425ee8f8e252ede3c71a7c1cd20bab83040de"
+native_input = "notebooks/julia/data/french_49_industries.csv"
+native_sha256 = "63cc949d0335ff5416e598b0e10a0ef4d2a3d9afa7360433d9b5dafd50326499"
+
+[datasets.mpdta]
+original = "data/public/callaway_santanna/mpdta.csv"
+original_sha256 = "1b789c34e12ff490b2f432217a1f70af334117523eb44d20eb842ed92a574661"
+native_input = "data/public/callaway_santanna/mpdta.csv"
+native_sha256 = "1b789c34e12ff490b2f432217a1f70af334117523eb44d20eb842ed92a574661"
