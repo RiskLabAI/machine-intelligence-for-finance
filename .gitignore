@@ -5,3 +5,6 @@ outputs/
 data/*
 !data/README.md
 *.download
+/notebooks/julia/data/*
+!/notebooks/julia/data/README.md
+!/notebooks/julia/data/inputs.toml

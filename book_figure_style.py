@@ -3,21 +3,17 @@ from matplotlib import pyplot as plt
 
 
 PALETTE = {
-    "navy": "#1B365D",
-    "blue": "#0072B2",
-    "teal": "#00866A",
-    "orange": "#C76D00",
-    "magenta": "#A03A78",
-    "red": "#B83B3B",
-    "gray": "#5C6670",
-    "light_gray": "#D9DEE5",
-    "near_white": "#F4F6F8",
-    "white": "#FFFFFF",
+    "navy": "#E5E7EB",
+    "blue": "#38BDF8",
+    "teal": "#34D399",
+    "orange": "#FBBF24",
+    "magenta": "#C084FC",
+    "red": "#FB7185",
+    "gray": "#94A3B8",
+    "light_gray": "#374151",
+    "near_white": "#1F2937",
+    "white": "#111827",
 }
-
-THEME_STATUS = "APPROVED_FOR_BOOK_WIDE_USE"
-THEME_APPROVED_AT = "2026-10-02"
-
 
 def selected_font():
     for family in ["Times New Roman", "Times", "DejaVu Serif"]:
@@ -37,7 +33,7 @@ def apply_book_figure_style():
             "font.size": 11.5,
             "figure.facecolor": PALETTE["white"],
             "axes.facecolor": PALETTE["white"],
-            "axes.edgecolor": PALETTE["gray"],
+            "axes.edgecolor": PALETTE["light_gray"],
             "axes.labelcolor": PALETTE["navy"],
             "axes.titlecolor": PALETTE["navy"],
             "axes.titleweight": "bold",
