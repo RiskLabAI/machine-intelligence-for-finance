@@ -22,11 +22,39 @@ function output_paths(subject)
     return paths
 end
 
+const notebook_figure_width = 900
+
+function limit_font!(attributes, name, limit)
+    points = attributes[name]
+    if points isa Real && points > limit
+        attributes[name] = limit
+    end
+    return nothing
+end
+
+function notebook_preview(figure)
+    preview = deepcopy(figure)
+    width, height = preview.attr[:size]
+    display_width = min(width, notebook_figure_width)
+    display_height = max(1, round(Int, height * display_width / width))
+    preview.attr[:size] = (display_width, display_height)
+    preview.attr[:dpi] = 100
+    for panel in preview.subplots
+        limit_font!(panel, :titlefontsize, 11)
+        limit_font!(panel, :legend_font_pointsize, 8)
+        for axis in (:xaxis, :yaxis, :zaxis)
+            limit_font!(panel[axis], :guidefontsize, 10)
+            limit_font!(panel[axis], :tickfontsize, 8)
+        end
+    end
+    return preview
+end
+
 function save_figure(figure, paths, name)
     for extension in ("png", "pdf")
         savefig(figure, joinpath(paths.figures, name*"."*extension))
     end
-    display(figure)
+    display(notebook_preview(figure))
     return nothing
 end
 
